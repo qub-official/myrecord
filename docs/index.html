@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MyRecord — Make beats in minutes</title>
+  <meta name="description" content="MyRecord is a free drag-and-drop beat maker for Windows. Start from a genre beat, then customize every sound. Step sequencer, piano roll, song arrangement, mixer and WAV export." />
+  <meta name="theme-color" content="#F5F4F2" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="apple-touch-icon" href="assets/icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MyRecord — Make beats in minutes" />
+  <meta property="og:description" content="A free drag-and-drop beat maker for Windows. Apply a beat, then make it yours." />
+  <meta property="og:url" content="https://qub-official.github.io/myrecord/" />
+  <meta property="og:image" content="https://qub-official.github.io/myrecord/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="MyRecord home">
+        <img src="assets/icon.png" width="256" height="256" alt="" class="brand-icon" />
+        <span>MyRecord</span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#genres">Genres</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="icon-link" href="https://github.com/qub-official/myrecord" aria-label="Source code on GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+        </a>
+        <a class="btn btn-dark btn-sm" href="https://github.com/qub-official/myrecord/releases/latest/download/MyRecord-Setup.exe">Download</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <span class="eyebrow"><i></i> Free for Windows 10 &amp; 11</span>
+        <h1>Make beats in minutes,<br /><span class="accent">not months.</span></h1>
+        <p class="lead">MyRecord is a drag-and-drop beat maker. Start from a ready-made beat, hear it instantly, then make it yours — no music theory, no sample packs, no learning curve.</p>
+        <div class="cta-row">
+          <a class="btn btn-dark btn-lg" href="https://github.com/qub-official/myrecord/releases/latest/download/MyRecord-Setup.exe">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.4z" fill="currentColor"/></svg>
+            Download for Windows
+          </a>
+          <a class="btn btn-line btn-lg" href="https://github.com/qub-official/myrecord">View source</a>
+        </div>
+        <p class="meta">Version 1.0 · 78 MB installer · No account needed</p>
+      </div>
+      <div class="container">
+        <figure class="shot shot-hero">
+          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>MyRecord — Trap beat</span></div>
+          <img src="assets/hero.png" width="2880" height="1800" alt="MyRecord's step sequencer playing a Trap beat, with the sound library on the left and sound controls on the right" fetchpriority="high" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="At a glance">
+      <div class="container stats-grid">
+        <div><b>8</b><span>starter beats</span></div>
+        <div><b>28</b><span>built-in instruments</span></div>
+        <div><b>9</b><span>studio effects</span></div>
+        <div><b>0</b><span>sample packs needed</span></div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">How it works</span>
+          <h2>Apply, then customize.</h2>
+          <p>Every part of MyRecord follows the same idea: drop something in that already sounds good, then shape it until it sounds like you.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="num">01</span>
+            <h3>Apply</h3>
+            <p>Drag a genre beat, a sound, a groove or an effect from the Library. It plays instantly — you’re never staring at an empty screen.</p>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <h3>Customize</h3>
+            <p>Click squares to change the rhythm, draw notes in the piano roll, and turn friendly knobs to tune every sound and effect.</p>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <h3>Export</h3>
+            <p>Arrange your patterns into a full song and export a clean WAV, ready for SoundCloud, YouTube or your next project.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Features</span>
+          <h2>A full studio, made simple.</h2>
+          <p>The tools producers rely on — redesigned so you can use them in your first five minutes.</p>
+        </div>
+
+        <article class="feature">
+          <div class="feature-text">
+            <span class="tag">Step sequencer</span>
+            <h3>Build rhythms by clicking squares.</h3>
+            <p>Paint drums across the grid, right-click to erase and scroll to set how hard each hit lands. Drop a new sound on a row to swap it while keeping your rhythm, or drop a groove to fill it with a classic pattern.</p>
+            <ul class="checks">
+              <li>1, 2 or 4-bar patterns</li>
+              <li>12 ready-made grooves, from four-on-the-floor to dembow</li>
+              <li>Swing control for a human feel</li>
+            </ul>
+          </div>
+          <figure class="shot"><img src="assets/steps.png" width="1548" height="968" alt="Step sequencer with kick, clap, hi-hat and 808 rows" loading="lazy" /></figure>
+        </article>
+
+        <article class="feature reverse">
+          <div class="feature-text">
+            <span class="tag">Piano roll</span>
+            <h3>Melodies that always sound right.</h3>
+            <p>Draw, move and stretch notes with the mouse. Pick a key and scale and MyRecord highlights the notes that fit. Drop a chord progression, then turn it into an arpeggio or a bassline with one click.</p>
+            <ul class="checks">
+              <li>8 chord progressions, from pop to dark trap</li>
+              <li>Arpeggiate, bassline and humanize helpers</li>
+              <li>Play notes from your computer keyboard</li>
+            </ul>
+          </div>
+          <figure class="shot"><img src="assets/piano.png" width="2880" height="1800" alt="Piano roll showing a K-Pop lead melody highlighted in the C major scale" loading="lazy" /></figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <span class="tag">Song arrangement</span>
+            <h3>Turn a loop into a finished track.</h3>
+            <p>Make an intro, a verse and a chorus as separate patterns, then paint them onto tracks to build your song. Move and stretch clips, mute tracks, and hear the whole arrangement in one press.</p>
+            <ul class="checks">
+              <li>Drag patterns straight onto the timeline</li>
+              <li>Live preview of every clip’s notes</li>
+              <li>Export the full song as WAV</li>
+            </ul>
+          </div>
+          <figure class="shot"><img src="assets/song.png" width="2880" height="1800" alt="Song view arranging Intro, Verse, Chorus and Drums patterns across tracks" loading="lazy" /></figure>
+        </article>
+
+        <article class="feature reverse">
+          <div class="feature-text">
+            <span class="tag">Mixer &amp; effects</span>
+            <h3>Polish it like a pro.</h3>
+            <p>Every sound gets its own mixer strip with volume, pan, mute, solo and live meters. Drop effects onto any strip — reverb for space, delay for echo, pump for that pulsing dance feel.</p>
+            <ul class="checks">
+              <li>Reverb, Delay, Filter, Drive, Compressor, EQ</li>
+              <li>Chorus, Lo-fi vinyl and sidechain-style Pump</li>
+              <li>A master chain with a built-in limiter</li>
+            </ul>
+          </div>
+          <figure class="shot"><img src="assets/mixer.png" width="2880" height="1800" alt="Mixer with strips for each sound and effect chains" loading="lazy" /></figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- DETAILS GRID -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Thoughtful details</span>
+          <h2>Built so you can’t get lost.</h2>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <span class="card-ico"><svg viewBox="0 0 24 24"><path d="M8 4v16M4 8l4-4 4 4M16 20V4M20 16l-4 4-4-4"/></svg></span>
+            <h3>Drag and drop everything</h3>
+            <p>Places you can drop light up while you drag. Prefer clicking? Every item has a + button too.</p>
+          </div>
+          <div class="card">
+            <span class="card-ico"><svg viewBox="0 0 24 24"><path d="M9 7L4 12l5 5M4.5 12H15a5 5 0 0 1 0 10h-2"/></svg></span>
+            <h3>Unlimited undo</h3>
+            <p>Experiment freely. Every change can be undone with Ctrl+Z — even applying a whole new beat.</p>
+          </div>
+          <div class="card">
+            <span class="card-ico"><svg viewBox="0 0 24 24"><path d="M12 16V5m0 0L7.5 9.5M12 5l4.5 4.5M5 15v3.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V15"/></svg></span>
+            <h3>Your own sounds</h3>
+            <p>Drop WAV, MP3, OGG or FLAC files from Windows Explorer. They become instruments instantly.</p>
+          </div>
+          <div class="card">
+            <span class="card-ico"><svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5zM8 4v5h7V4M8 20v-6h8v6"/></svg></span>
+            <h3>Autosave</h3>
+            <p>Close the app anytime. Your last beat is waiting for you when you come back.</p>
+          </div>
+          <div class="card">
+            <span class="card-ico"><svg viewBox="0 0 24 24"><rect x="3.5" y="6" width="17" height="12" rx="2.5"/><path d="M7 10h1M10 10h1M13 10h1M16 10h1M8 14h8"/></svg></span>
+            <h3>Keyboard piano</h3>
+            <p>The Z–M and Q–U keys play the selected sound, so you can find a melody before you draw it.</p>
+          </div>
+          <div class="card">
+            <span class="card-ico"><svg viewBox="0 0 24 24"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 7v10"/></svg></span>
+            <h3>Clean WAV export</h3>
+            <p>44.1 kHz, 16-bit stereo with automatic peak protection, so your exports never clip.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GENRES -->
+    <section class="section section-alt" id="genres">
+      <div class="container genres">
+        <div class="section-head">
+          <span class="kicker">Starter beats</span>
+          <h2>Pick a vibe. Press play.</h2>
+          <p>Eight genre templates with drums, bass, chords and effects already in place — the perfect starting point to learn from or build on.</p>
+        </div>
+        <ul class="genre-list">
+          <li><b>Trap</b><span>140 BPM</span></li>
+          <li><b>Lo-fi</b><span>82 BPM</span></li>
+          <li><b>House</b><span>124 BPM</span></li>
+          <li><b>Boom Bap</b><span>90 BPM</span></li>
+          <li><b>K-Pop</b><span>118 BPM</span></li>
+          <li><b>Afrobeats</b><span>104 BPM</span></li>
+          <li><b>Drill</b><span>142 BPM</span></li>
+          <li><b>Reggaeton</b><span>95 BPM</span></li>
+        </ul>
+        <figure class="shot shot-narrow"><img src="assets/welcome.png" width="2880" height="1800" alt="MyRecord welcome screen with eight starter beats to choose from" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div class="section-head left">
+          <span class="kicker">FAQ</span>
+          <h2>Questions, answered.</h2>
+          <p>Something else on your mind? <a href="https://github.com/qub-official/myrecord/issues">Open an issue on GitHub</a>.</p>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>Is MyRecord really free?</summary>
+            <p>Yes. MyRecord is free and open source under the MIT license. There are no accounts, subscriptions or watermarks on your exports.</p>
+          </details>
+          <details>
+            <summary>Windows says “Windows protected your PC”. Is it safe?</summary>
+            <p>That message appears for apps that aren’t signed with a paid certificate yet. Click <b>More info</b>, then <b>Run anyway</b>. The full source code is public on GitHub, so anyone can check exactly what the app does.</p>
+          </details>
+          <details>
+            <summary>Do I need to know music theory?</summary>
+            <p>No. Starter beats, grooves and chord progressions do the theory for you, and the piano roll highlights the notes that fit your key.</p>
+          </details>
+          <details>
+            <summary>Can I use my own samples?</summary>
+            <p>Yes. Drag WAV, MP3, OGG or FLAC files into the app and they become new sounds. They’re saved inside your project file, so nothing goes missing.</p>
+          </details>
+          <details>
+            <summary>Can I use my beats commercially?</summary>
+            <p>Yes. Everything you make is yours. The built-in instruments are synthesized by the app, so there are no sample licenses to worry about.</p>
+          </details>
+          <details>
+            <summary>Is there a Mac version?</summary>
+            <p>Not yet. MyRecord is built with Electron, so macOS support is possible in the future. Watch the GitHub repository for updates.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final">
+      <div class="container">
+        <div class="final-card">
+          <svg class="mascot" viewBox="0 0 120 120" aria-hidden="true">
+            <path d="M27 60C27 28 93 28 93 60" fill="none" stroke="#2E2F33" stroke-width="6.5" stroke-linecap="round"/>
+            <rect x="25" y="38" width="70" height="66" rx="30" fill="#E9E4E0"/>
+            <rect x="16" y="57" width="15" height="25" rx="7.5" fill="#A87C3A"/><rect x="89" y="57" width="15" height="25" rx="7.5" fill="#A87C3A"/>
+            <ellipse cx="48" cy="70" rx="4.6" ry="5.6" fill="#0C0F14"/><ellipse cx="72" cy="70" rx="4.6" ry="5.6" fill="#0C0F14"/>
+            <circle cx="49.6" cy="68" r="1.5" fill="#fff"/><circle cx="73.6" cy="68" r="1.5" fill="#fff"/>
+            <ellipse cx="39.5" cy="80" rx="5" ry="2.8" fill="#B49A85" opacity=".45"/><ellipse cx="80.5" cy="80" rx="5" ry="2.8" fill="#B49A85" opacity=".45"/>
+            <path d="M54.5 80.5q5.5 5 11 0" fill="none" stroke="#0C0F14" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M98 18v14.5a4 4 0 1 1-2-3.4V20.5l8-2v-3z" fill="#A87C3A"/>
+          </svg>
+          <h2>Your first beat is a minute away.</h2>
+          <p>Download MyRecord, pick a starter beat and press Space.</p>
+          <a class="btn btn-gold btn-lg" href="https://github.com/qub-official/myrecord/releases/latest/download/MyRecord-Setup.exe">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download for Windows
+          </a>
+          <span class="meta">Free · Windows 10 &amp; 11 (64-bit)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top"><img src="assets/icon.png" width="256" height="256" alt="" class="brand-icon" /><span>MyRecord</span></a>
+      <nav aria-label="Footer">
+        <a href="https://github.com/qub-official/myrecord">GitHub</a>
+        <a href="https://github.com/qub-official/myrecord/releases">Releases</a>
+        <a href="https://github.com/qub-official/myrecord/issues">Report a bug</a>
+        <a href="https://github.com/qub-official/myrecord/blob/main/LICENSE">MIT License</a>
+      </nav>
+      <span class="copy">© 2026 qub-official</span>
+    </div>
+  </footer>
+
+  <script>
+    // Subtle border on the nav once the page scrolls.
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+node_modules/
+dist/
+
+# promo videos made with /brag (kept local)
+brag-output*/

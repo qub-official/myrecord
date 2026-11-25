@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'self' data: blob:" />
+  <title>MyRecord</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" id="logo"></span>
+      <div class="brand-text">
+        <span class="brand-name">MyRecord</span>
+        <input class="project-name" id="projectName" spellcheck="false" title="Rename project" />
+      </div>
+    </div>
+
+    <div class="transport">
+      <div class="seg" id="modeSeg" title="Play the current pattern or the whole song">
+        <button data-mode="pattern" class="on">Pattern</button>
+        <button data-mode="song">Song</button>
+      </div>
+      <button class="play" id="playBtn" title="Play / Stop (Space)">
+        <svg viewBox="0 0 24 24" class="i-play"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+        <svg viewBox="0 0 24 24" class="i-stop"><rect x="6.5" y="6.5" width="11" height="11" rx="2.2"/></svg>
+      </button>
+      <div class="lcd" id="lcd"><span class="lcd-pos" id="lcdPos">1 . 1</span><span class="lcd-label">BAR . BEAT</span></div>
+      <label class="field" title="Tempo — drag up/down or type">
+        <span>BPM</span><input id="bpm" type="number" min="40" max="240" step="1" />
+      </label>
+      <div class="field knob-field" id="swingField" title="Swing — groove feel"><span class="swing-label">Swing</span></div>
+      <div class="field key-field" title="Key & scale — used by chords and the piano roll"><span>Key</span><div><select id="keySel"></select><select id="scaleSel"></select></div></div>
+      <button class="icon-btn toggle" id="metroBtn" title="Metronome">
+        <svg viewBox="0 0 24 24"><path d="M9.2 3h5.6l4 17.2a.7.7 0 0 1-.7.8H5.9a.7.7 0 0 1-.7-.8L9.2 3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 15.5l5-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7.5 16h9" stroke="currentColor" stroke-width="1.7"/></svg>
+      </button>
+    </div>
+
+    <div class="actions">
+      <button class="icon-btn" id="undoBtn" title="Undo (Ctrl+Z)"><svg viewBox="0 0 24 24"><path d="M9 7L4 12l5 5M4.5 12H15a5 5 0 0 1 0 10h-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="icon-btn" id="redoBtn" title="Redo (Ctrl+Y)"><svg viewBox="0 0 24 24"><path d="M15 7l5 5-5 5M19.5 12H9a5 5 0 0 0 0 10h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <span class="sep"></span>
+      <button class="btn ghost" id="fileBtn" title="New, open, save">File
+        <svg viewBox="0 0 24 24" style="width:13px;height:13px"><path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn line" id="saveBtn" title="Save project (Ctrl+S)">Save</button>
+      <button class="btn primary" id="exportBtn" title="Export WAV (Ctrl+E)">
+        <svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Export
+      </button>
+    </div>
+  </header>
+
+  <div class="workspace">
+    <aside class="browser" id="browser">
+      <div class="panel-head">
+        <h2>Library</h2>
+        <p class="hint">Drag anything into your beat</p>
+      </div>
+      <div class="tabs" id="browserTabs">
+        <button data-tab="beats" class="on">Beats</button>
+        <button data-tab="sounds">Sounds</button>
+        <button data-tab="fx">Effects</button>
+        <button data-tab="grooves">Grooves</button>
+        <button data-tab="chords">Chords</button>
+      </div>
+      <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input id="search" placeholder="Search" spellcheck="false" /></div>
+      <div class="browser-list" id="browserList"></div>
+      <label class="import" id="importZone">
+        <input type="file" id="fileInput" accept="audio/*" multiple hidden />
+        <svg viewBox="0 0 24 24"><path d="M12 16V5m0 0L7.5 9.5M12 5l4.5 4.5M5 15v3.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><b>Import your sounds</b><small>Drop WAV / MP3 anywhere</small></span>
+      </label>
+    </aside>
+
+    <main class="stage" id="stage">
+      <nav class="views">
+        <div class="view-tabs" id="viewTabs">
+          <button data-view="rack" class="on"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="4" height="4" rx="1.2"/><rect x="10" y="5" width="4" height="4" rx="1.2"/><rect x="16.5" y="5" width="4" height="4" rx="1.2" opacity=".35"/><rect x="3.5" y="15" width="4" height="4" rx="1.2" opacity=".35"/><rect x="10" y="15" width="4" height="4" rx="1.2"/><rect x="16.5" y="15" width="4" height="4" rx="1.2" opacity=".35"/></svg>Steps<kbd>F6</kbd></button>
+          <button data-view="piano"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="7" height="3" rx="1.2"/><rect x="9" y="10.5" width="9" height="3" rx="1.2"/><rect x="5" y="16" width="5" height="3" rx="1.2"/><rect x="14" y="16" width="6.5" height="3" rx="1.2" opacity=".4"/></svg>Piano Roll<kbd>F7</kbd></button>
+          <button data-view="playlist"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="8" height="4" rx="1.2"/><rect x="12" y="5" width="8" height="4" rx="1.2" opacity=".4"/><rect x="7" y="11" width="10" height="4" rx="1.2"/><rect x="3" y="17" width="6" height="3" rx="1.2" opacity=".4"/></svg>Song<kbd>F5</kbd></button>
+          <button data-view="mixer"><svg viewBox="0 0 24 24"><path d="M6 4v16M12 4v16M18 4v16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="3.8" y="13" width="4.4" height="3" rx="1"/><rect x="9.8" y="7" width="4.4" height="3" rx="1"/><rect x="15.8" y="11" width="4.4" height="3" rx="1"/></svg>Mixer<kbd>F9</kbd></button>
+        </div>
+        <div class="pattern-picker" id="patternPicker"></div>
+      </nav>
+      <section class="view" id="view"></section>
+    </main>
+
+    <aside class="inspector" id="inspector"></aside>
+  </div>
+
+  <footer class="statusbar">
+    <span class="tip" id="tip"></span>
+    <div class="master-meter" title="Master output"><span>OUT</span><div class="meter-h"><i id="masterMeter"></i></div></div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <div class="modal-wrap" id="modal"></div>
+  <div class="drop-veil" id="dropVeil"><div><span class="veil-icon"></span><b>Drop to add</b><small>Audio files become new sounds</small></div></div>
+
+  <script src="js/instruments.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/library.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/widgets.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
